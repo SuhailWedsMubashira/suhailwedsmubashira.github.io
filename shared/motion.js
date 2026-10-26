@@ -159,6 +159,13 @@ if (!REDUCED_MOTION) {
   primeLineDrawings();
   if (document.body.classList.contains("locked")) {
     document.addEventListener("invite:open", beginMotion, { once: true });
+    const unlockWatcher = new MutationObserver(() => {
+      if (!document.body.classList.contains("locked")) {
+        unlockWatcher.disconnect();
+        beginMotion();
+      }
+    });
+    unlockWatcher.observe(document.body, { attributes: true, attributeFilter: ["class"] });
   } else {
     beginMotion();
   }
