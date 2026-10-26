@@ -13,8 +13,14 @@ const EVENT = {
 const byId = (id) => document.getElementById(id);
 
 function openCover() {
-  byId("cover")?.classList.add("open");
-  document.body.classList.remove("locked");
+  const cover = byId("cover");
+  if (!cover || cover.classList.contains("open")) return;
+  cover.classList.add("open");
+  const delay = cover.classList.contains("instant") ? 0 : Number(cover.dataset.openDelay || 0);
+  setTimeout(() => {
+    document.body.classList.remove("locked");
+    document.dispatchEvent(new Event("invite:open"));
+  }, delay);
 }
 
 function addToCalendar() {
@@ -46,6 +52,14 @@ function startCountdown() {
   if (!box) return;
   const cells = Object.fromEntries([...box.querySelectorAll("[data-u]")].map((el) => [el.dataset.u, el]));
   const pad = (n) => String(n).padStart(2, "0");
+  const set = (el, value) => {
+    const text = String(value);
+    if (el.textContent === text) return;
+    el.textContent = text;
+    el.classList.remove("tick");
+    void el.offsetWidth;
+    el.classList.add("tick");
+  };
   const tick = () => {
     const ms = EVENT.startsAt - Date.now();
     if (ms <= 0) {
@@ -54,10 +68,10 @@ function startCountdown() {
       return;
     }
     const s = Math.floor(ms / 1000);
-    cells.d.textContent = Math.floor(s / 86400);
-    cells.h.textContent = pad(Math.floor(s / 3600) % 24);
-    cells.m.textContent = pad(Math.floor(s / 60) % 60);
-    cells.s.textContent = pad(s % 60);
+    set(cells.d, Math.floor(s / 86400));
+    set(cells.h, pad(Math.floor(s / 3600) % 24));
+    set(cells.m, pad(Math.floor(s / 60) % 60));
+    set(cells.s, pad(s % 60));
   };
   const timer = setInterval(tick, 1000);
   tick();
@@ -79,7 +93,10 @@ const cover = byId("cover");
 if (cover) {
   cover.addEventListener("click", openCover);
   cover.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") openCover(); });
-  if (location.hash === "#open") openCover();
+  if (location.hash === "#open") {
+    cover.classList.add("instant");
+    openCover();
+  }
 }
 
 const mapLink = byId("map");
@@ -90,4 +107,8 @@ if (rsvpLink) rsvpLink.href = `https://wa.me/${EVENT.rsvpPhone}?text=${encodeURI
 
 byId("calendar")?.addEventListener("click", addToCalendar);
 startCountdown();
-revealOnScroll();
+if (document.body.classList.contains("locked")) {
+  document.addEventListener("invite:open", revealOnScroll, { once: true });
+} else {
+  revealOnScroll();
+}
