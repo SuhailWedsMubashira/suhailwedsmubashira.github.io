@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suhail & Mubashira · Choose a colourway</title>
+<title>Suhail & Mubashira · Wedding Invitation</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,15 @@
   header { text-align:center; padding:4rem 1.5rem 1rem; }
   header .eyebrow { font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); font-weight:400; }
   header h1 { font-family:"Pinyon Script", cursive; font-weight:400; font-size:clamp(2.6rem, 9vw, 4rem); line-height:1.2; margin:.6rem 0 .4rem; }
-  header p { font-family:"Cormorant Garamond", serif; font-style:italic; font-size:1.15rem; color:var(--soft); max-width:620px; margin:0 auto; }
+  header p { font-family:"Cormorant Garamond", serif; font-style:italic; font-size:1.15rem; color:var(--soft); max-width:640px; margin:0 auto; }
 
+  .side { padding:2.5rem 0 .5rem; }
+  .side + .side { border-top:1px solid var(--line); }
+  .side > h2 { text-align:center; font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.9rem; }
+  .side > p { text-align:center; font-family:"Cormorant Garamond", serif; font-style:italic; color:var(--soft); font-size:1.05rem; margin-top:.2rem; padding:0 1.5rem; }
   .grid {
     display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 300px)); justify-content:center; gap:2.75rem 2.5rem;
-    max-width:1100px; margin:0 auto; padding:2.5rem 1.5rem 3rem;
+    max-width:1100px; margin:0 auto; padding:2.25rem 1.5rem 3rem;
   }
   .option { display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit; }
   .phone {
@@ -32,15 +36,10 @@
   .option:focus-visible { outline:none; }
   .meta { text-align:center; margin-top:1.4rem; max-width:290px; }
   .num { font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); font-weight:500; }
-  .meta h2 { font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.55rem; margin:.15rem 0 .35rem; }
+  .meta h3 { font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.55rem; margin:.15rem 0 .35rem; }
   .meta > p { font-size:.9rem; color:var(--soft); line-height:1.55; }
-  .swatches { display:flex; gap:.4rem; justify-content:center; margin:.7rem 0 .7rem; }
-  .swatches span { width:18px; height:18px; border-radius:50%; border:1px solid rgba(0,0,0,.1); }
-  .specs { display:grid; grid-template-columns:auto 1fr; gap:.25rem .7rem; text-align:left; margin:.9rem auto 0; font-size:.8rem; line-height:1.4; }
-  .specs dt { font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:500; padding-top:.15rem; }
   .open { display:inline-block; margin-top:1rem; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; font-weight:400; border-bottom:1px solid var(--gold); padding-bottom:.2rem; }
-  .original { opacity:.85; }
-  footer { text-align:center; padding:0 1.5rem 4rem; font-size:.85rem; color:var(--soft); }
+  footer { text-align:center; padding:1rem 1.5rem 4rem; font-size:.85rem; color:var(--soft); }
 </style>
 </head>
 <body>
@@ -48,105 +47,48 @@
 <header>
   <p class="eyebrow">Nikah · 3 January 2027</p>
   <h1>Suhail &amp; Mubashira</h1>
-  <p>Five colourways of the envelope design (Option 1), each brighter and cleaner than the original. Every one has the M &amp; S wax seal. Tap any one to open it full screen.</p>
+  <p>Three ornament designs replace the star, each with its own font for the date. Pick one for each invitation. Tap any one to open it full screen.</p>
 </header>
 
-<main class="grid">
+<section class="side">
+  <h2>Suhail's invitation · 1A</h2>
+  <p>Pearl white and champagne gold, from Mr. P. M. Abdul Hameed &amp; Mrs. Haseena</p>
+  <div class="grid">
+    <a class="option" href="options/1a-lotus/">
+      <div class="phone"><iframe src="options/1a-lotus/#open" title="1A Lotus preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 1</p><h3>Lotus</h3><p>A line-drawn lotus that gently floats. Date in Playfair Display.</p><span class="open">Open design</span></div>
+    </a>
+    <a class="option" href="options/1a-arch/">
+      <div class="phone"><iframe src="options/1a-arch/#open" title="1A Arch preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 2</p><h3>Arch &amp; Lantern</h3><p>A Mughal arch with a crescent finial and a swaying lantern. Date in Cinzel.</p><span class="open">Open design</span></div>
+    </a>
+    <a class="option" href="options/1a-wreath/">
+      <div class="phone"><iframe src="options/1a-wreath/#open" title="1A Wreath preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 3</p><h3>Monogram Wreath</h3><p>M &amp; S inside a laurel wreath tied with a bow. Date in Bodoni.</p><span class="open">Open design</span></div>
+    </a>
+  </div>
+</section>
 
-  <a class="option" href="options/1a-pearl-champagne/">
-    <div class="phone"><iframe src="options/1a-pearl-champagne/#open" title="1A preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">1A</p>
-      <h2>Pearl &amp; Champagne</h2>
-      <div class="swatches"><span style="background:#ffffff"></span><span style="background:#c4a262"></span><span style="background:#1d1d1f"></span></div>
-      <p>Pure white paper, champagne gold and crisp black lettering. The cleanest and most modern.</p>
-      <dl class="specs">
-        <dt>Background</dt><dd>Pearl white</dd>
-        <dt>Text</dt><dd>Soft black</dd>
-        <dt>Envelope</dt><dd>White, gold seal</dd>
-      </dl>
-      <span class="open">Open design</span>
-    </div>
-  </a>
+<section class="side">
+  <h2>Mubashira's invitation · 1E</h2>
+  <p>Blush ivory with maroon names, from Mr. Muneer Ahmed &amp; Mrs. Raihana Ahmed</p>
+  <div class="grid">
+    <a class="option" href="options/1e-lotus/">
+      <div class="phone"><iframe src="options/1e-lotus/#open" title="1E Lotus preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 1</p><h3>Lotus</h3><p>A line-drawn lotus that gently floats. Date in Playfair Display.</p><span class="open">Open design</span></div>
+    </a>
+    <a class="option" href="options/1e-arch/">
+      <div class="phone"><iframe src="options/1e-arch/#open" title="1E Arch preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 2</p><h3>Arch &amp; Lantern</h3><p>A Mughal arch with a crescent finial and a swaying lantern. Date in Cinzel.</p><span class="open">Open design</span></div>
+    </a>
+    <a class="option" href="options/1e-wreath/">
+      <div class="phone"><iframe src="options/1e-wreath/#open" title="1E Wreath preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Design 3</p><h3>Monogram Wreath</h3><p>M &amp; S inside a laurel wreath tied with a bow. Date in Bodoni.</p><span class="open">Open design</span></div>
+    </a>
+  </div>
+</section>
 
-  <a class="option" href="options/1b-ivory-24k/">
-    <div class="phone"><iframe src="options/1b-ivory-24k/#open" title="1B preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">1B</p>
-      <h2>Ivory &amp; 24k Gold</h2>
-      <div class="swatches"><span style="background:#fffcf4"></span><span style="background:#f3d47a"></span><span style="background:#8e1d2a"></span></div>
-      <p>The closest to the original, but lighter, with both names in shimmering gold foil.</p>
-      <dl class="specs">
-        <dt>Background</dt><dd>Light ivory</dd>
-        <dt>Text</dt><dd>Gold foil names, charcoal text</dd>
-        <dt>Envelope</dt><dd>Ivory, maroon seal</dd>
-      </dl>
-      <span class="open">Open design</span>
-    </div>
-  </a>
-
-  <a class="option" href="options/1c-ivory-emerald/">
-    <div class="phone"><iframe src="options/1c-ivory-emerald/#open" title="1C preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">1C</p>
-      <h2>Ivory &amp; Emerald</h2>
-      <div class="swatches"><span style="background:#fffffb"></span><span style="background:#0f3d30"></span><span style="background:#b8964f"></span></div>
-      <p>Deep emerald lettering and an emerald envelope with a gold seal. Traditional and regal.</p>
-      <dl class="specs">
-        <dt>Background</dt><dd>Ivory white</dd>
-        <dt>Text</dt><dd>Emerald green</dd>
-        <dt>Envelope</dt><dd>Emerald, gold seal</dd>
-      </dl>
-      <span class="open">Open design</span>
-    </div>
-  </a>
-
-  <a class="option" href="options/1d-ivory-navy/">
-    <div class="phone"><iframe src="options/1d-ivory-navy/#open" title="1D preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">1D</p>
-      <h2>Ivory &amp; Midnight Navy</h2>
-      <div class="swatches"><span style="background:#ffffff"></span><span style="background:#1b2a4a"></span><span style="background:#bb9a5c"></span></div>
-      <p>Midnight navy lettering and a navy envelope with a gold seal. Sharp and formal.</p>
-      <dl class="specs">
-        <dt>Background</dt><dd>Cool white</dd>
-        <dt>Text</dt><dd>Midnight navy</dd>
-        <dt>Envelope</dt><dd>Navy, gold seal</dd>
-      </dl>
-      <span class="open">Open design</span>
-    </div>
-  </a>
-
-  <a class="option" href="options/1e-ivory-maroon/">
-    <div class="phone"><iframe src="options/1e-ivory-maroon/#open" title="1E preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">1E</p>
-      <h2>Ivory &amp; Maroon</h2>
-      <div class="swatches"><span style="background:#fffcf8"></span><span style="background:#7a1628"></span><span style="background:#bd9550"></span></div>
-      <p>Warm white with a hint of blush, maroon names and a maroon wax seal.</p>
-      <dl class="specs">
-        <dt>Background</dt><dd>Blush-tinted ivory</dd>
-        <dt>Text</dt><dd>Maroon names</dd>
-        <dt>Envelope</dt><dd>White, maroon seal</dd>
-      </dl>
-      <span class="open">Open design</span>
-    </div>
-  </a>
-
-  <a class="option original" href="options/1-ivory-gold/">
-    <div class="phone"><iframe src="options/1-ivory-gold/#open" title="Original preview" loading="lazy" tabindex="-1"></iframe></div>
-    <div class="meta">
-      <p class="num">For comparison</p>
-      <h2>Original Option 1</h2>
-      <div class="swatches"><span style="background:#fffdf8"></span><span style="background:#b08f55"></span><span style="background:#2c2924"></span></div>
-      <p>The version they first liked, now with 11:00 AM and the M &amp; S seal.</p>
-      <span class="open">Open design</span>
-    </div>
-  </a>
-
-</main>
-
-<footer>Once a colourway is chosen, it becomes the main page and the others are removed.</footer>
+<footer>Once the designs are chosen, Suhail's becomes the main page and Mubashira's gets its own link.</footer>
 
 </body>
 </html>
