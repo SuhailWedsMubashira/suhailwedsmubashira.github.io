@@ -21,8 +21,10 @@ function playLineDrawings() {
   document.querySelectorAll("svg[data-draw]").forEach((svg) => {
     const duration = Number(svg.dataset.draw) || 1800;
     const delay = Number(svg.dataset.drawDelay) || 0;
-    svg.querySelectorAll("[data-draw-kind]").forEach((shape, i) => {
-      const stagger = delay + i * 90;
+    const shapes = svg.querySelectorAll("[data-draw-kind]");
+    const step = Math.min(90, 1400 / shapes.length);
+    shapes.forEach((shape, i) => {
+      const stagger = delay + i * step;
       if (shape.dataset.drawKind === "stroke") {
         shape.style.transition = `stroke-dashoffset ${duration}ms cubic-bezier(.6,.1,.3,1) ${stagger}ms`;
         shape.style.strokeDashoffset = "0";
