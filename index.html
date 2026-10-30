@@ -15,22 +15,14 @@
   header { text-align:center; padding:4rem 1.5rem 1rem; }
   header .eyebrow { font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); font-weight:400; }
   header h1 { font-family:"Pinyon Script", cursive; font-weight:400; font-size:clamp(2.6rem, 9vw, 4rem); line-height:1.2; margin:.6rem 0 .4rem; }
-  header p { font-family:"Cormorant Garamond", serif; font-style:italic; font-size:1.15rem; color:var(--soft); max-width:640px; margin:0 auto; }
-
-  .side { padding:2.5rem 0 .5rem; }
-  .side + .side { border-top:1px solid var(--line); }
-  .side > h2 { text-align:center; font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.9rem; }
-  .side > p { text-align:center; font-family:"Cormorant Garamond", serif; font-style:italic; color:var(--soft); font-size:1.05rem; margin-top:.2rem; padding:0 1.5rem; }
-  .grid {
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 300px)); justify-content:center; gap:2.75rem 2.5rem;
-    max-width:1100px; margin:0 auto; padding:2.25rem 1.5rem 3rem;
-  }
+  section { padding:2rem 0 .5rem; }
+  section + section { border-top:1px solid var(--line); }
+  section > h2 { text-align:center; font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.9rem; }
+  section > p { text-align:center; font-family:"Cormorant Garamond", serif; font-style:italic; color:var(--soft); font-size:1.05rem; margin-top:.2rem; padding:0 1.5rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 300px)); justify-content:center; gap:2.75rem 3rem; max-width:900px; margin:0 auto; padding:2.25rem 1.5rem 3rem; }
   .option { display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit; }
-  .phone {
-    position:relative; width:260px; height:540px; overflow:hidden; border-radius:30px;
-    border:8px solid #1d1b19; background:#fff;
-    box-shadow:0 30px 60px -30px rgba(0,0,0,.35); transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s;
-  }
+  .phone { position:relative; width:260px; height:540px; overflow:hidden; border-radius:30px; border:8px solid #1d1b19; background:#fff;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.35); transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
   .phone iframe { position:absolute; top:0; left:0; width:366px; height:735px; border:0; transform:scale(.6776); transform-origin:0 0; pointer-events:none; }
   .option:hover .phone, .option:focus-visible .phone { transform:translateY(-6px); box-shadow:0 40px 70px -30px rgba(0,0,0,.45); }
   .option:focus-visible { outline:none; }
@@ -39,7 +31,6 @@
   .meta h3 { font-family:"Cormorant Garamond", serif; font-weight:500; font-size:1.55rem; margin:.15rem 0 .35rem; }
   .meta > p { font-size:.9rem; color:var(--soft); line-height:1.55; }
   .open { display:inline-block; margin-top:1rem; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; font-weight:400; border-bottom:1px solid var(--gold); padding-bottom:.2rem; }
-  footer { text-align:center; padding:1rem 1.5rem 4rem; font-size:.85rem; color:var(--soft); }
 </style>
 </head>
 <body>
@@ -47,48 +38,36 @@
 <header>
   <p class="eyebrow">Nikah · 3 January 2027</p>
   <h1>Suhail &amp; Mubashira</h1>
-  <p>Three refined variations for each invitation: medallions for Suhail's, lotuses for Mubashira's. Tap any one to open it full screen.</p>
 </header>
 
-<section class="side">
-  <h2>Suhail's invitation · 1A</h2>
-  <p>Pearl white and champagne gold, from Mr. P. M. Abdul Hameed &amp; Mrs. Haseena. Medallion designs.</p>
+<section>
+  <h2>The invitations</h2>
   <div class="grid">
-    <a class="option" href="options/1a-shamsa/">
-      <div class="phone"><iframe src="options/1a-shamsa/#open" title="1A Shamsa Sunburst preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 1</p><h3>Shamsa Sunburst</h3><p>The classic medallion of Islamic manuscripts: a scalloped gold sun with slowly turning rays and a flower at its heart.</p><span class="open">Open design</span></div>
+    <a class="option" href="suhail/">
+      <div class="phone"><iframe src="suhail/#open" title="Suhail's invitation preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">From Suhail's family</p><h3>Suhail's invitation</h3><span class="open">Open invitation</span></div>
     </a>
-    <a class="option" href="options/1a-quatrefoil/">
-      <div class="phone"><iframe src="options/1a-quatrefoil/#open" title="1A Mughal Quatrefoil preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 2</p><h3>Mughal Quatrefoil</h3><p>A single gold lozenge holding a four-petal Mughal flower, with fine rules reaching out to either side.</p><span class="open">Open design</span></div>
-    </a>
-    <a class="option" href="options/1a-rosette/">
-      <div class="phone"><iframe src="options/1a-rosette/#open" title="1A Interlaced Rosette preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 3</p><h3>Interlaced Rosette</h3><p>Eight circles woven into a soft flower, framed by a fine double ring. It turns very slowly.</p><span class="open">Open design</span></div>
+    <a class="option" href="mubashira/">
+      <div class="phone"><iframe src="mubashira/#open" title="Mubashira's invitation preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">From Mubashira's family · Final</p><h3>Mubashira's invitation</h3><span class="open">Open invitation</span></div>
     </a>
   </div>
 </section>
 
-<section class="side">
-  <h2>Mubashira's invitation · 1E</h2>
-  <p>Blush ivory with maroon names, from Mr. Muneer Ahmed &amp; Mrs. Raihana Ahmed. Lotus designs.</p>
+<section>
+  <h2>Mosque arch options for Suhail's invitation</h2>
+  <p>The two arch designs from earlier rounds. Pick one and it replaces the star on Suhail's invitation.</p>
   <div class="grid">
-    <a class="option" href="options/1e-lotus-line/">
-      <div class="phone"><iframe src="options/1e-lotus-line/#open" title="1E Fine-line Lotus preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 1</p><h3>Fine-line Lotus</h3><p>The lotus you liked, redrawn with layered petals and veins, resting on a fine gold rule.</p><span class="open">Open design</span></div>
+    <a class="option" href="preview/suhail-mosque-arch/">
+      <div class="phone"><iframe src="preview/suhail-mosque-arch/#open" title="Mosque arch ornament preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Arch A</p><h3>Mosque Arch &amp; Lantern</h3><p>Suhail's same card, with a small mosque arch, crescent and swaying lantern in place of the star.</p><span class="open">Open design</span></div>
     </a>
-    <a class="option" href="options/1e-lotus-mandala/">
-      <div class="phone"><iframe src="options/1e-lotus-mandala/#open" title="1E Lotus Mandala preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 2</p><h3>Lotus Mandala</h3><p>A lotus seen from above: two rings of petals inside a fine gold circle, turning very slowly.</p><span class="open">Open design</span></div>
-    </a>
-    <a class="option" href="options/1e-lotus-scroll/">
-      <div class="phone"><iframe src="options/1e-lotus-scroll/#open" title="1E Lotus &amp; Flourish preview" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="meta"><p class="num">Design 3</p><h3>Lotus &amp; Flourish</h3><p>A smaller lotus with calligraphic gold flourishes curling out on either side.</p><span class="open">Open design</span></div>
+    <a class="option" href="preview/mughal-arch-card/">
+      <div class="phone"><iframe src="preview/mughal-arch-card/#open" title="Mughal arch card preview" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="meta"><p class="num">Arch B</p><h3>Mughal Arch Card</h3><p>The whole card shaped like a mosque arch with a hanging lantern. Opens with lattice screens sliding apart.</p><span class="open">Open design</span></div>
     </a>
   </div>
 </section>
-
-<footer>Once the designs are chosen, Suhail's becomes the main page and Mubashira's gets its own link.</footer>
 
 </body>
 </html>
