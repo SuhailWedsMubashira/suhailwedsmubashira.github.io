@@ -6,6 +6,7 @@ const EVENT = {
   location: "Palemar Convention Centre, Mary Hill, Konchady, Mangalore",
   details: "Nikah at 11:00 AM, followed by lunch till 2:00 PM.",
   // Digits only, with country code (e.g. "919876543210"). Empty lets the guest pick a chat.
+  // A page overrides this with data-rsvp-phone on <body>.
   rsvpPhone: "",
   rsvpText: "Assalamu Alaikum! Insha'Allah I will attend the Nikah of Suhail & Mubashira on 3 January 2027.",
 };
@@ -103,7 +104,8 @@ const mapLink = byId("map");
 if (mapLink) mapLink.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(EVENT.location);
 
 const rsvpLink = byId("rsvp");
-if (rsvpLink) rsvpLink.href = `https://wa.me/${EVENT.rsvpPhone}?text=${encodeURIComponent(EVENT.rsvpText)}`;
+const rsvpPhone = document.body.dataset.rsvpPhone || EVENT.rsvpPhone;
+if (rsvpLink) rsvpLink.href = `https://wa.me/${rsvpPhone}?text=${encodeURIComponent(EVENT.rsvpText)}`;
 
 byId("calendar")?.addEventListener("click", addToCalendar);
 startCountdown();
