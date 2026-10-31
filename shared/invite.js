@@ -4,7 +4,7 @@ const EVENT = {
   startUtc: "20270103T053000Z",
   endUtc: "20270103T083000Z",
   location: "Palemar Convention Centre, Mary Hill, Konchady, Mangalore",
-  details: "Nikah at 11:00 AM, followed by lunch till 2:00 PM.",
+  details: "Nikah at 11:00 AM. Lunch to follow (until 2:00 PM).",
   // Digits only, with country code (e.g. "919876543210"). Empty lets the guest pick a chat.
   // A page overrides this with data-rsvp-phone on <body>.
   rsvpPhone: "",
