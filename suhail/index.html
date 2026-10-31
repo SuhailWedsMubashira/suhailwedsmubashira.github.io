@@ -111,7 +111,21 @@
   .orn .rays { transform-box:fill-box; transform-origin:center; animation:spin 120s linear infinite; }
   .orn.float { animation:float 6s ease-in-out infinite; }
   @keyframes float { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
-  .star { display:block; width:50px; height:50px; margin:0 auto; color:var(--gold); animation:spin 60s linear infinite; }
+  .card { --pad-x:clamp(1.75rem, 7vw, 3.5rem); --arch-h:calc(.55 * (100cqi + 2 * var(--pad-x)));
+    background:none; box-shadow:none; overflow:visible; isolation:isolate; padding-top:0; margin-top:1.6rem; }
+  .card::before { inset:calc(var(--arch-h) - 1px) 0 0; z-index:-1; border:1px solid var(--rule); border-top:0;
+    background:var(--paper); box-shadow:var(--card-shadow); animation:none; }
+  .card::after { inset:calc(var(--arch-h) - 1px) 3.75% 7px; border:1px solid rgba(196,162,98,.3); border-top:0; animation:none; }
+  .corner { display:none; }
+  .sheen { --fade:linear-gradient(transparent calc(var(--arch-h) * .3), #000 var(--arch-h)); -webkit-mask-image:var(--fade); mask-image:var(--fade); }
+  .arch { position:relative; margin:0 calc(-1 * var(--pad-x)) calc(var(--arch-h) * -0.42); }
+  .arch .fill { position:absolute; inset:0; width:100%; height:100%; z-index:-1; overflow:visible; }
+  .arch .line { position:relative; display:block; width:100%; height:auto; overflow:visible; color:var(--gold); }
+  .mini-arch { display:block; width:36px; height:auto; margin:2.4rem auto 0; color:var(--gold); overflow:visible; }
+  body { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23c4a262' stroke-opacity='0.16' stroke-width='1'%3E%3Crect x='14' y='14' width='20' height='20'/%3E%3Crect x='14' y='14' width='20' height='20' transform='rotate(45 24 24)'/%3E%3Ccircle cx='24' cy='24' r='4'/%3E%3Cpath d='M0 24h7M41 24h7M24 0v7M24 41v7M0 0l7 7M48 0l-7 7M0 48l7-7M48 48l-7-7'/%3E%3C/g%3E%3C/svg%3E"); }
+  .lamp { position:absolute; top:0; left:50%; width:26px; margin-left:-13px; color:var(--gold-dk); transform-origin:50% 0;
+    animation:sway 6s ease-in-out infinite; filter:drop-shadow(0 0 8px rgba(239,220,170,.8)); }
+  @keyframes sway { 0%, 100% { transform:rotate(-2.5deg); } 50% { transform:rotate(2.5deg); } }
   .foil { background:var(--foil); background-size:260% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:sheen 7s ease-in-out infinite; }
 
   .bismillah { font-family:Amiri, serif; font-weight:700; font-size:clamp(1.55rem, 6vw, 1.9rem); line-height:1.9; direction:rtl; margin-top:1.2rem; }
@@ -223,12 +237,15 @@
     <rect x="9.5" y="9.5" width="5" height="5" transform="rotate(45 12 12)" fill="currentColor" stroke="none"/>
   </svg>
 
-  <svg class="star" viewBox="-50 -50 100 100" data-draw="1800" data-draw-delay="200" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
-    <rect x="-27" y="-27" width="54" height="54"/>
-    <rect x="-27" y="-27" width="54" height="54" transform="rotate(45)"/>
-    <circle r="15"/>
-    <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)" fill="currentColor" stroke="none" opacity=".85"/>
+  <div class="arch">
+  <svg class="fill" viewBox="0 0 200 110" aria-hidden="true"><path d="M0.5 110V72C0.5 44 42 34 72 22C88 15 97 8 100 0.5C103 8 112 15 128 22C158 34 199.5 44 199.5 72V110Z" style="fill:var(--paper)"/></svg>
+  <svg class="line" viewBox="0 0 200 110" data-draw="2200" data-draw-delay="150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"><path d="M0.5 110V72C0.5 44 42 34 72 22C88 15 97 8 100 0.5C103 8 112 15 128 22C158 34 199.5 44 199.5 72V110"/><path d="M7.5 110V74C7.5 50 46 40 74 29C89 23 97 16 100 9C103 16 111 23 126 29C154 40 192.5 50 192.5 74V110" stroke-opacity=".5"/></svg>
+  <svg class="lamp" viewBox="0 0 40 110" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M20 0V20"/><path d="M13 24h14l4 8H9z"/><path d="M9 32c-4 11-4 27 0 38h22c4-11 4-27 0-38" fill="currentColor" fill-opacity=".08"/>
+    <path d="M20 32v38M14.5 32c-2 12-2 26 0 38M25.5 32c2 12 2 26 0 38"/><path d="M9 70l4 8h14l4-8"/><path d="M20 78v10"/>
+    <ellipse cx="20" cy="51" rx="4" ry="9" fill="#ffe7b0" stroke="none" opacity=".75"/>
   </svg>
+</div>
 
   <div class="rise" style="animation-delay:.5s">
     <p class="bismillah foil">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
@@ -272,12 +289,7 @@
     <p>Mary Hill, Konchady, Mangalore</p>
   </div>
 
-  <svg class="star" viewBox="-50 -50 100 100" data-draw="1600" data-draw-delay="4600" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" style="margin-top:2.4rem; width:30px; height:30px; animation-direction:reverse">
-    <rect x="-27" y="-27" width="54" height="54"/>
-    <rect x="-27" y="-27" width="54" height="54" transform="rotate(45)"/>
-    <circle r="15"/>
-    <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)" fill="currentColor" stroke="none" opacity=".85"/>
-  </svg>
+  <svg class="mini-arch" viewBox="-6 -20 212 136" data-draw="1600" data-draw-delay="4600" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M0.5 110V72C0.5 44 42 34 72 22C88 15 97 8 100 0.5C103 8 112 15 128 22C158 34 199.5 44 199.5 72V110"/><path d="M-6 110H206"/></svg>
 </article>
 
 <section class="after rise" style="animation-delay:4.8s">
