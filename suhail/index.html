@@ -39,7 +39,7 @@
   .cover {
     position:fixed; inset:0; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;
     background:radial-gradient(ellipse at 50% 45%, var(--cover-a), var(--cover-b) 75%); cursor:pointer;
-    transition:opacity .9s ease 4.4s, visibility 0s linear 5.3s;
+    transition:opacity .9s ease 3.4s, visibility 0s linear 4.3s;
   }
   .cover.open { opacity:0; visibility:hidden; }
   .cover.instant, .cover.instant * { transition:none !important; }
@@ -203,7 +203,7 @@
 
 <canvas id="fx" data-kind="dust" data-colors="#d4b06a,#f0dca6,#e8c98a,#fff3d2" aria-hidden="true"></canvas>
 
-<div class="cover" id="cover" data-open-delay="4400" role="button" tabindex="0" aria-label="Open invitation">
+<div class="cover" id="cover" data-open-delay="3400" role="button" tabindex="0" aria-label="Open invitation">
   <p class="cover-label">You are invited</p>
   <div class="envelope">
     <div class="env-back"></div>
