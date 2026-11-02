@@ -39,13 +39,13 @@
   .cover {
     position:fixed; inset:0; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;
     background:radial-gradient(ellipse at 50% 45%, var(--cover-a), var(--cover-b) 75%); cursor:pointer;
-    transition:opacity .9s ease 1.9s, visibility 0s linear 2.8s;
+    transition:opacity .9s ease 4.4s, visibility 0s linear 5.3s;
   }
   .cover.open { opacity:0; visibility:hidden; }
   .cover.instant, .cover.instant * { transition:none !important; }
   .cover-label { font-size:.72rem; font-weight:600; letter-spacing:.34em; text-transform:uppercase; color:var(--gold-dk); }
   .cover-hint { font-style:italic; color:var(--soft); animation:breathe 2.4s ease-in-out infinite; }
-  .cover.open .cover-label, .cover.open .cover-hint { opacity:0; transition:opacity .4s ease; }
+  .cover.open .cover-label, .cover.open .cover-hint { opacity:0; transition:opacity .4s ease; animation:none; }
 
   .envelope { position:relative; width:min(84vw, 360px); aspect-ratio:1.5; perspective:1200px; filter:drop-shadow(0 22px 28px var(--env-shadow)); }
   .env-back { position:absolute; inset:0; background:var(--liner) center/18px 18px, var(--env-back); border-radius:4px; }
@@ -194,7 +194,7 @@
 
 <canvas id="fx" data-kind="dust" data-colors="#d4af6a,#ecd39a,#efc7bd,#f6e4c0" aria-hidden="true"></canvas>
 
-<div class="cover" id="cover" data-open-delay="2000" role="button" tabindex="0" aria-label="Open invitation">
+<div class="cover" id="cover" data-open-delay="4400" role="button" tabindex="0" aria-label="Open invitation">
   <p class="cover-label">You are invited</p>
   <div class="envelope">
     <div class="env-back"></div>
